@@ -126,6 +126,6 @@ The look-ahead asserts that what immediately precedes the current position is a 
  
 ## Author
  
-Landon Wilson
+Landon Wilson </br>
 A full-stack web developer working to complete UCF’s coding bootcamp. To contact me please visit my github profile 
  
