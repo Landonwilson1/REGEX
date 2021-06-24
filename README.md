@@ -2,10 +2,12 @@
 THis hexadecimal number system, sometimes just called HEX, is a number system that uses 16 unique symbols to represent a particular value. These symbols are 0-9 and a-f.
  
 One of the many cases of the hexadecimal number system are hex color codes. A hex color code is a way to represent a color in RBG format. For example: 
- 
+
+```
 BLUE #e2f1fb
 GREEN #00ff00
 AQUA #00ffff
+```
  
 Today we will be focusing on explaining the details on how a REGEX(regular expression) can match a HEX value. Below are detailed explanations below on how regex operates with the case.
  
