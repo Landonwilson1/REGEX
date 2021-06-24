@@ -52,17 +52,17 @@ The other quantifier is ```{}```, which is used twice for ```{6}``` and ```{3}``
  
 ### OR Operator
  
-In our expression there is one group separated by an OR operator |. Our group is: 
+In our expression there is one group separated by an OR operator ```|```. Our group is: 
  
-([a-f0-9]{6}|[a-f0-9]{3})
+```([a-f0-9]{6}|[a-f0-9]{3})```
  
-The first expression ([a-f0-9]{6} and the second [a-f0-9]{3}). The OR operator | will demonstrate that our regex will match either one of those two expressions. For example: regex was being used for email validation. The OR operator in that expression would allow many top-level email domains to match. I.e. .com.net.org.
+The first expression ```[a-f0-9]{6}``` and the second ```[a-f0-9]{3}```. The OR operator ```|``` will demonstrate that our regex will match either one of those two expressions. For example: regex was being used for email validation. The OR operator in that expression would allow many top-level email domains to match. I.e. ```.com.net.org.```
  
 ### Character Classes
  
-Character classes, also known as a character set, are ways to match only one out of several characters. A character class will match any character inside of brackets. For example: [ae] will match any “a” or “e”. This could be used with gr[ae]y to match either grey or gray. 
+Character classes, also known as a character set, are ways to match only one out of several characters. A character class will match any character inside of brackets. For example: ```[ae]``` will match any “a” or “e”. This could be used with ```gr[ae]y``` to match either grey or gray. 
  
-Inside of our expression, we have [a-f0-9] repeated twice. The class will match two ranges, any letter from a-f and any number from 0-9. 
+Inside of our expression, we have ```[a-f0-9]``` repeated twice. The class will match two ranges, any letter from a-f and any number from 0-9. 
  
 ### Flags
  
@@ -100,7 +100,7 @@ Parentheses are used for grouping and capturing. Placing an expression inside of
  
 In our expression we have one big group separated by an OR operator. 
  
-([a-f0-9]{6}|[a-f0-9]{3})
+```([a-f0-9]{6}|[a-f0-9]{3})```
  
  
 This grouping treats multiple characters as a single unit. This is useful when extracting information using Javascript. 
@@ -109,21 +109,21 @@ This grouping treats multiple characters as a single unit. This is useful when e
  
 A bracket expression in regex will match any specific pattern of character in a string. Characters can be alphabetic, numeric, special, symbols, etc.. A hyphen is used to set a range of characters.In our regex we have one bracket expression. 
  
-[a-f0-9]
+```[a-f0-9]```
  
 A range is defined from any letter from a-f(lowercase) and a number 0-9. 
  
 ### Greedy and Lazy Match
  
-A greedy match means that it will be the longest possible string. Lazy means that it will match the shortest possible string. Greedy matches are needed in JavaScript to match as many occurances of a particular pattern as possible. For example our regex expression uses [a-f0-9]{6}. This will match as many as 6 occurrences making it a greedy match.
+A greedy match means that it will be the longest possible string. Lazy means that it will match the shortest possible string. Greedy matches are needed in JavaScript to match as many occurances of a particular pattern as possible. For example our regex expression uses ```[a-f0-9]{6}```. This will match as many as 6 occurrences making it a greedy match.
  
 ### Boundaries
  
-Boundaries are used with the metacharacter \b. It matches at a position that is called a “word boundary”. There are multiple instances of using a boundary. Before the first character in the string, after the last character in the string, and between the two characters in a string. There are no boundaries in our regex.
+Boundaries are used with the metacharacter ```\b```. It matches at a position that is called a “word boundary”. There are multiple instances of using a boundary. Before the first character in the string, after the last character in the string, and between the two characters in a string. There are no boundaries in our regex.
  
 ### Back-references
  
-Back-referneces match the same text previously matched by a capturing group. For example: ([a-c])\1\1 matche aaa, bbb,and ccc. The back-reference \1 refers to the first capturing group. \1 matches the same text that was matched by the first capturing group. 
+Back-referneces match the same text previously matched by a capturing group. For example: ```([a-c])\1\1``` matche ```aaa, bbb,and ccc```. The back-reference ```\1``` refers to the first capturing group. ```\1``` matches the same text that was matched by the first capturing group. 
  
 ### Look-ahead and Look-behind
  
