@@ -69,27 +69,19 @@ Inside of our expression, we have ```[a-f0-9]``` repeated twice. The class will 
 Flags can be used in a regex to modify a search. There are only six flags in JavaScript (i,g,s,m,y,u). Each flag serves a different purpose in the regex search behavior. There are no flags in our HEX value expression.
 Listed below is how the flags operate. 
  
-```Flag
-Name
-Modification
-i
-Ignore Casing
-Makes the expression search case-insensitively.
-g
-Global
-Makes the expression search for all occurences.
-s
-Dot All
-Makes the wild character . match newlines as well.
-m
-Multiline
-Makes the boundary characters ^ and $ match the beginning and ending of every single line instead of the beginning and ending of the whole string.
-y
-Sticky
-Makes the expression start its searching from the index indicated in its lastIndex property.
-u
-Unicode
-Makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well.
+```Flags
+
+i             Makes the expression search case-insensitively.
+
+g             Makes the expression search for all occurences.
+
+s             Makes the wild character . match newlines as well.
+
+m             Makes the boundary characters ^ and $ match the beginning and ending of every single line instead of the beginning and ending of the whole string.
+
+y             Makes the expression start its searching from the index indicated in its lastIndex property.
+
+u             Makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well.
 ```
  
  
