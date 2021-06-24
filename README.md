@@ -1,7 +1,8 @@
 # REGEX Tutorial: Matching HEX
+
 The hexadecimal number system, sometimes just called HEX, is a number system that uses 16 unique symbols to represent a particular value. These symbols are 0-9 and a-f.
  
-One of the many cases of the hexadecimal number system are hex color codes. A hex color code is a way to represent a color in RBG format. For example: 
+One of the many cases of the hexadecimal number system are hex color codes. These color codes represent a color in RBG format. For example: 
 
 ```
 BLUE #e2f1fb
@@ -9,7 +10,7 @@ GREEN #00ff00
 AQUA #00ffff
 ```
  
-Today we will be focusing on explaining the details on how a REGEX(regular expression) can match a HEX value. Below are detailed explanations below on how regex operates with the case.
+Today we will be focusing on explaining the details on how a REGEX(regular expression) can match a HEX value. Below are detailed explanations on how regex operates with this case.
  
 ## Summary
  
@@ -35,20 +36,32 @@ REGEX expressions can be used for many different purposes. From validating email
  
 ### Anchors
  
-In regular expressions, anchors are used to check if the matching symbol is the starting symbol or the ending symbol of the input string. There are two types of anchors. The first type is the caret ```^```. This will check if the matching character is the first character of the input. The second type is the dollar sign ```$``` this will check if there is a matching character at the end of the string.
+In regular expressions, anchors are used to check if the matching symbol is the starting symbol or the ending symbol of the input string. There are only two types of anchors. The first is the caret ```^```. This will match characters at the start of the string as well as after each line break.. The second type ```$``` matches at the end of the string and before every line break. 
  
-In our expression there are both of these anchors.
+In our expression, both anchors are being used.
  
 ```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
  
-They are being used in combination to make sure that we are matching the full expression from the beginning to end. 
+These anchors are being used together to make sure the start of the string is matched before the end of the string is.
+
  
 ### Quantifiers
  
-This regex expression uses two types of quantifiers : ```?``` and ```{}```.
-The ```?``` quantifier will match any preceding character 0 or 1 times. This will make the ```?``` a conditional inside of the regular expression. In our expression, the ```?``` is preceded with a ```#```. This means that our expression will match either a string that begins with ```#``` or not.
+Quantifiers decide how many instances of a possible character or character class must be in the input of the regex. There are multiple quantifiers in regex; however, our expression only uses two. The ```?``` and the ```{}``` quantifiers.
  
-The other quantifier is ```{}```, which is used twice for ```{6}``` and ```{3}```. This meta character matches exactly the number of times within the curly bracket. For example, this regular expression will match any string that has 3 consecutive digits such as 123 or 555.
+```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
+ 
+ 
+The ```?``` quantifier matches the preceding element zero or 1 times. Since the preceding element is ```?```(```#```)?. The input must match with a # or not. 
+ 
+The second quantifier, ```{}```, is used twice in the regex.
+ 
+/^#?([a-f0-9]```{6}```|[a-f0-9]```{3}```)$/
+ 
+ 
+This numeric value inside the curly brackets must match the number of times the instance occurs. For example, if the regular expression is ```{3}``` it will have to match any string that has 3 consecutive digits such as 123 or 111.
+ 
+
  
 ### OR Operator
  
@@ -96,12 +109,13 @@ In our expression we have one big group separated by an OR operator.
  
 ```([a-f0-9]{6}|[a-f0-9]{3})```
  
- 
-This grouping treats multiple characters as a single unit. This is useful when extracting information using Javascript. 
+  
+This grouping works the entire expression inside of the parentheses. This is useful when extracting information using Javascript. 
+
  
 ### Bracket Expressions
  
-A bracket expression in regex will match any specific pattern of character in a string. Characters can be alphabetic, numeric, special, symbols, etc.. A hyphen is used to set a range of characters.In our regex we have one bracket expression. 
+A bracket expression in regex will match any specific pattern of character in a string. Characters can be alphabetic, numeric, special, symbols, etc.. The ```-```` is used to set the range of characters. In our regex we have one bracket expression. 
  
 ```[a-f0-9]```
  
@@ -130,4 +144,3 @@ Landon Wilson </br>
 A full-stack web developer working to complete UCF’s coding bootcamp. </br>
 To contact me please visit my github profile [github.com/Landonwilson1](https://github.com/Landonwilson1)
 
- 
