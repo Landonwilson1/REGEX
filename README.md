@@ -1,5 +1,5 @@
 # REGEX Tutorial: Matching HEX
-THis hexadecimal number system, sometimes just called HEX, is a number system that uses 16 unique symbols to represent a particular value. These symbols are 0-9 and a-f.
+The hexadecimal number system, sometimes just called HEX, is a number system that uses 16 unique symbols to represent a particular value. These symbols are 0-9 and a-f.
  
 One of the many cases of the hexadecimal number system are hex color codes. A hex color code is a way to represent a color in RBG format. For example: 
 
@@ -15,7 +15,7 @@ Today we will be focusing on explaining the details on how a REGEX(regular expre
  
 REGEX expressions can be used for many different purposes. From validating emails to password security. This document will be focusing on an expression that is used to match HEX values.
  
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
  
 ## Table of Contents
  
@@ -35,20 +35,20 @@ REGEX expressions can be used for many different purposes. From validating email
  
 ### Anchors
  
-In regular expressions, anchors are used to check if the matching symbol is the starting symbol or the ending symbol of the input string. There are two types of anchors. The first type is the caret ^. This will check if the matching character is the first character of the input. The second type is the dollar sign $ this will check if there is a matching character at the end of the string.
+In regular expressions, anchors are used to check if the matching symbol is the starting symbol or the ending symbol of the input string. There are two types of anchors. The first type is the caret ```^```. This will check if the matching character is the first character of the input. The second type is the dollar sign ```$``` this will check if there is a matching character at the end of the string.
  
 In our expression there are both of these anchors.
  
-/^#?([a-f0-9]{6}|[a-f0-9]{3})$/
+```/^#?([a-f0-9]{6}|[a-f0-9]{3})$/```
  
 They are being used in combination to make sure that we are matching the full expression from the beginning to end. 
  
 ### Quantifiers
  
-This regex expression uses two types of quantifiers : ? and {}.
-The ? quantifier will match any preceding character 0 or 1 times. This will make the ? a conditional inside of the regular expression. In our expression, the ? is preceded with a #. This means that our expression will match either a string that begins with # or not.
+This regex expression uses two types of quantifiers : ```?``` and ```{}```.
+The ```?``` quantifier will match any preceding character 0 or 1 times. This will make the ```?``` a conditional inside of the regular expression. In our expression, the ```?``` is preceded with a ```#```. This means that our expression will match either a string that begins with ```#``` or not.
  
-The other quantifier is {}, which is used twice for {6} and {3}. This meta character matches exactly the number of times within the curly bracket. For example, this regular expression will match any string that has 3 consecutive digits such as 123 or 555.
+The other quantifier is ```{}```, which is used twice for ```{6}``` and ```{3}```. This meta character matches exactly the number of times within the curly bracket. For example, this regular expression will match any string that has 3 consecutive digits such as 123 or 555.
  
 ### OR Operator
  
