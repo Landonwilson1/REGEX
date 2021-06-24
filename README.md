@@ -77,11 +77,13 @@ g             Makes the expression search for all occurences.
 
 s             Makes the wild character . match newlines as well.
 
-m             Makes the boundary characters ^ and $ match the beginning and ending of every single line instead of the beginning and ending of the whole string.
+m             Makes the boundary characters ^ and $ match the beginning and ending of every
+              single line instead of the beginning and ending of the whole string.
 
 y             Makes the expression start its searching from the index indicated in its lastIndex property.
 
-u             Makes the expression assume individual characters as code points, not code units, and thus match 32-bit characters as well.
+u             Makes the expression assume individual characters as code points, not code units,
+              and thus match 32-bit characters as well.
 ```
  
  
